@@ -1,0 +1,42 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+{% load staticfiles%}
+<body>
+    <style>
+		div.side{
+			text-align: center;
+			display: flex;
+    		align-items: center;
+    		background-color:azure;
+		}
+		.button {
+			border: none;
+			color:black;
+			padding: 15px 32px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 16px;
+			margin: 4px 2px;
+			cursor: pointer;
+			border: 2px solid  rgb(151, 197, 224);
+		}
+		.button:hover{
+			background-color:  rgb(151, 197, 224);
+  			color:black;
+		}
+    </style>
+    <div>
+	<div class="side">
+
+    </div>
+    <div class="main">
+        <h1>Play Machine Learning</h1>
+        <table >  
+			<button class="button"><a href="/search">Start here by uploading file</a></button>
+		</table>
+    </div>
+    </div>
+</body>
+{% endblock %}

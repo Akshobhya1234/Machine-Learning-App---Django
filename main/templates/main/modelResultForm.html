@@ -1,0 +1,11 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+<h1>HELLO</h1>
+<h2>Accuracy: 98.75%</h2>
+<h2>Precision: 94.34%</h2>
+{% for tut in modelResult %}
+
+<h1>{{tut.accuracy}}</h1>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'main/header.html' %}
+{% block content %}
+    <style>
+        div.a {
+        text-align: center;
+        }
+        div.side{
+            text-align: center;
+            display: flex;
+            align-items: center;
+            background-color:azure;
+        }
+        .button {
+            border: none;
+            color:black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border: 2px solid  rgb(151, 197, 224);
+        }
+        .button:hover{
+            background-color:  rgb(151, 197, 224);
+                color:black;
+        }
+    </style>
+<div class = 'a'>
+<form method='POST'> 
+    {% csrf_token %}
+    Select Model: <input type="text" name="model" list="list">
+
+    <datalist id="list">
+      <option value="Naive Bayes">Naive Bayes</option>
+      <option value="Decision Tree">Decision Tree</option>
+      <option value="Support Vector Machine">Support Vector Machine</option>
+      <option value="Random Forest">Random Forest</option>
+      <option value="KNN">KNN</option>
+      </datalist>
+    </input>
+<input type="hidden" value={{user.username|title}} name="userName">
+<button class="button" type = "submit">Upload</button>
+</form>
+<button class="button"><a href="/modelResultView    ">next</a></button>
+</div>
+
+
+{%endblock%}

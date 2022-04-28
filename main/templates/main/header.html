@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<style>
+		div.a {
+				text-align: center;
+		}
+		</style>
+
+<head>
+	{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+	<link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+
+<body>
+	<div class="header">
+		<h2 class="first-link">Project Hub</h2>
+		<a href="/">Home</a>
+		{% if user.is_authenticated %}
+		<a href="/account">{{user.username|title}}</a>
+		<a href="/logout">Logout</a>
+		{% else %}
+		<a href="/login">Login</a>
+		<a href="/register">Register</a>
+		{% endif %}
+	</div>
+
+
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>

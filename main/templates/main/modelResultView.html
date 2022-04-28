@@ -1,0 +1,17 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+<style>
+    div.a {
+            text-align: center;
+    }
+    </style>
+
+    <div class="a">
+        <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock %}

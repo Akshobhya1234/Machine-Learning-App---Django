@@ -1,0 +1,27 @@
+{% extends 'main/header.html' %}
+
+{% block content%}
+<br>
+<br>
+<style>
+    div.a {
+            text-align: center;
+    }
+</style>
+<div class='a'>
+<font size="5">
+
+{% for tut in search %}
+
+
+{% if user.username|title == tut.UserName %} 
+<b>Features of the data are</b>
+<p>{{tut.FileHead}}</p>
+
+{% endif %}
+
+{%endfor%}
+</div>
+
+
+{%endblock%}
